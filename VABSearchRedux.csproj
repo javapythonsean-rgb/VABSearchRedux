@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>VABSearchRedux</AssemblyName>
+    <RootNamespace>VABSearchRedux</RootNamespace>
+    <Version>1.1.1</Version>
+    <KSP2DIR Condition="'$(KSP2DIR)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program 2</KSP2DIR>
+    <GameManagedDir Condition="'$(GameManagedDir)' == ''">$(KSP2DIR)\KSP2_x64_Data\Managed</GameManagedDir>
+    <GameAssemblyPath Condition="'$(GameAssemblyPath)' == ''">$(GameManagedDir)\Assembly-CSharp.dll</GameAssemblyPath>
+    <TextMeshProPath Condition="'$(TextMeshProPath)' == ''">$(GameManagedDir)\Unity.TextMeshPro.dll</TextMeshProPath>
+    <UnityUiPath Condition="'$(UnityUiPath)' == ''">$(GameManagedDir)\UnityEngine.UI.dll</UnityUiPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="reference-shim\**\*.cs" />
+    <Compile Remove="tests\**\*.cs" />
+    <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="$(GameAssemblyPath)">
+      <HintPath>$(GameAssemblyPath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>$(TextMeshProPath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(UnityUiPath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="$(GameManagedDir)\0Harmony.dll">
+      <HintPath>$(GameManagedDir)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

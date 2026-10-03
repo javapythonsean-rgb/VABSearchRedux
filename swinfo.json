@@ -1,0 +1,25 @@
+{
+  "spec": "2.0",
+  "mod_id": "com.javap.vabsearchredux",
+  "author": "javap",
+  "name": "VAB Craft Search Redux",
+  "description": "Search saved crafts by name in the KSP2 Redux VAB load dialog.",
+  "source": "",
+  "version": "1.1.1",
+  "version_check": "",
+  "ksp2_version": {
+    "min": "*",
+    "max": "*"
+  },
+  "dependencies": [
+    {
+      "id": "SpaceWarp2",
+      "version": {
+        "min": "2.0.0",
+        "max": "*"
+      }
+    }
+  ],
+  "conflicts": [],
+  "main_assembly": "VABSearchRedux.dll"
+}
